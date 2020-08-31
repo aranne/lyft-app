@@ -270,6 +270,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="PyD-os-tnq"/>
                     </view>
+                    <connections>
+                        <outlet property="dropoffTextField" destination="4WT-lc-Ijc" id="hky-lU-Gio"/>
+                        <outlet property="tableView" destination="Qwq-1N-Rms" id="IwN-vs-Fss"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bUs-ok-IwT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
