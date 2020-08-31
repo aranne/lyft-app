@@ -41,6 +41,12 @@ class HomeViewController: UIViewController, UITableViewDataSource, CLLocationMan
         searchButton.layer.shadowOpacity = 0.5
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        // hide navigation bar
+        navigationController?.isNavigationBarHidden = true
+    }
+    
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let firstLocation = locations.first!
         currentUserLocation = Location(title: "Current Location", subtitle: "", latitude: firstLocation.coordinate.latitude, longitude: firstLocation.coordinate.longitude)

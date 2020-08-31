@@ -34,6 +34,16 @@ class LocationViewController: UIViewController, UITableViewDataSource, UITextFie
         searchCompleter.delegate = self
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        // show navigation bar
+        navigationController?.isNavigationBarHidden = false
+    }
+    
+    @IBAction func backDidTapped(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
+    }
+    
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         let latestString = (textField.text! as NSString).replacingCharacters(in: range, with: string)
         if latestString.count > 3 {
