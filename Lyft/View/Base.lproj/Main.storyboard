@@ -292,10 +292,10 @@
             </objects>
             <point key="canvasLocation" x="-65.217391304347828" y="22.767857142857142"/>
         </scene>
-        <!--View Controller-->
+        <!--Route View Controller-->
         <scene sceneID="MxC-xS-Ad8">
             <objects>
-                <viewController id="s13-zA-A5F" sceneMemberID="viewController">
+                <viewController id="s13-zA-A5F" customClass="RouteViewController" customModule="Lyft" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Mwz-GD-TKR">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -413,6 +413,10 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="s13-zA-A5F" id="etl-w3-efg"/>
+                                    <outlet property="delegate" destination="s13-zA-A5F" id="Ifc-6z-ioX"/>
+                                </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mNR-FS-lm4">
                                 <rect key="frame" x="20" y="792" width="374" height="50"/>
@@ -457,6 +461,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="RQv-JP-j6z"/>
                     </view>
+                    <connections>
+                        <outlet property="backButton" destination="wUv-Gw-U51" id="djv-WW-Zp2"/>
+                        <outlet property="routeLabelContainer" destination="cni-ta-dvm" id="0Cg-2O-hXy"/>
+                        <outlet property="selectRideButton" destination="mNR-FS-lm4" id="LD1-hQ-17K"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vxf-l0-XJW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
