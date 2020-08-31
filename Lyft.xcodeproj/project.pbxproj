@@ -9,12 +9,12 @@
 /* Begin PBXBuildFile section */
 		7C867FEB24FC7A9B009E5DF6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C867FEA24FC7A9B009E5DF6 /* AppDelegate.swift */; };
 		7C867FED24FC7A9B009E5DF6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C867FEC24FC7A9B009E5DF6 /* SceneDelegate.swift */; };
-		7C867FEF24FC7A9B009E5DF6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C867FEE24FC7A9B009E5DF6 /* ViewController.swift */; };
 		7C867FF224FC7A9B009E5DF6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C867FF024FC7A9B009E5DF6 /* Main.storyboard */; };
 		7C867FF424FC7A9D009E5DF6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7C867FF324FC7A9D009E5DF6 /* Assets.xcassets */; };
 		7C867FF724FC7A9D009E5DF6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C867FF524FC7A9D009E5DF6 /* LaunchScreen.storyboard */; };
 		7C86800224FC7A9D009E5DF6 /* LyftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C86800124FC7A9D009E5DF6 /* LyftTests.swift */; };
 		7C86800D24FC7A9D009E5DF6 /* LyftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C86800C24FC7A9D009E5DF6 /* LyftUITests.swift */; };
+		7C86801E24FC7B79009E5DF6 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C86801D24FC7B79009E5DF6 /* Location.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +38,6 @@
 		7C867FE724FC7A9B009E5DF6 /* Lyft.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lyft.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C867FEA24FC7A9B009E5DF6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7C867FEC24FC7A9B009E5DF6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		7C867FEE24FC7A9B009E5DF6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		7C867FF124FC7A9B009E5DF6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7C867FF324FC7A9D009E5DF6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7C867FF624FC7A9D009E5DF6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +48,7 @@
 		7C86800824FC7A9D009E5DF6 /* LyftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LyftUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C86800C24FC7A9D009E5DF6 /* LyftUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LyftUITests.swift; sourceTree = "<group>"; };
 		7C86800E24FC7A9D009E5DF6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7C86801D24FC7B79009E5DF6 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,12 +99,12 @@
 		7C867FE924FC7A9B009E5DF6 /* Lyft */ = {
 			isa = PBXGroup;
 			children = (
+				7C86801C24FC7AD6009E5DF6 /* Controller */,
+				7C86801B24FC7ACA009E5DF6 /* View */,
+				7C86801A24FC7ABE009E5DF6 /* Model */,
 				7C867FEA24FC7A9B009E5DF6 /* AppDelegate.swift */,
 				7C867FEC24FC7A9B009E5DF6 /* SceneDelegate.swift */,
-				7C867FEE24FC7A9B009E5DF6 /* ViewController.swift */,
-				7C867FF024FC7A9B009E5DF6 /* Main.storyboard */,
 				7C867FF324FC7A9D009E5DF6 /* Assets.xcassets */,
-				7C867FF524FC7A9D009E5DF6 /* LaunchScreen.storyboard */,
 				7C867FF824FC7A9D009E5DF6 /* Info.plist */,
 			);
 			path = Lyft;
@@ -126,6 +126,30 @@
 				7C86800E24FC7A9D009E5DF6 /* Info.plist */,
 			);
 			path = LyftUITests;
+			sourceTree = "<group>";
+		};
+		7C86801A24FC7ABE009E5DF6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7C86801D24FC7B79009E5DF6 /* Location.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7C86801B24FC7ACA009E5DF6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7C867FF024FC7A9B009E5DF6 /* Main.storyboard */,
+				7C867FF524FC7A9D009E5DF6 /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		7C86801C24FC7AD6009E5DF6 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,8 +283,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7C867FEF24FC7A9B009E5DF6 /* ViewController.swift in Sources */,
 				7C867FEB24FC7A9B009E5DF6 /* AppDelegate.swift in Sources */,
+				7C86801E24FC7B79009E5DF6 /* Location.swift in Sources */,
 				7C867FED24FC7A9B009E5DF6 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
