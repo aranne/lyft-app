@@ -47,6 +47,12 @@ class HomeViewController: UIViewController, UITableViewDataSource, CLLocationMan
         navigationController?.isNavigationBarHidden = true
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let locationController = segue.destination as? LocationViewController {
+            locationController.pickupLocation = currentUserLocation
+        }
+    }
+    
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let firstLocation = locations.first!
         currentUserLocation = Location(title: "Current Location", subtitle: "", latitude: firstLocation.coordinate.latitude, longitude: firstLocation.coordinate.longitude)
