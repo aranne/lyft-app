@@ -28,10 +28,10 @@
             </objects>
             <point key="canvasLocation" x="613" y="23"/>
         </scene>
-        <!--View Controller-->
+        <!--Home View Controller-->
         <scene sceneID="xGt-y9-aEl">
             <objects>
-                <viewController id="7hL-QT-Wbn" sceneMemberID="viewController">
+                <viewController id="7hL-QT-Wbn" customClass="HomeViewController" customModule="Lyft" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="OZe-ix-Rev">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -56,6 +56,7 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dzd-XO-vpV">
                                 <rect key="frame" x="15" y="647" width="384" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="osC-TP-YJ9"/>
                                 </constraints>
@@ -65,7 +66,7 @@
                                 </state>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" estimatedRowHeight="60" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vIT-Ga-zqz">
-                                <rect key="frame" x="0.0" y="697" width="414" height="199"/>
+                                <rect key="frame" x="0.0" y="707" width="414" height="189"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="LocationCell" rowHeight="60" id="b76-X1-RmG">
@@ -117,7 +118,7 @@
                             <constraint firstItem="Ji4-nL-cJ2" firstAttribute="leading" secondItem="A7w-WT-8Va" secondAttribute="leading" constant="20" id="Amz-wp-FD0"/>
                             <constraint firstItem="fO2-cY-vfg" firstAttribute="top" secondItem="Ji4-nL-cJ2" secondAttribute="bottom" constant="10" id="D4y-Tm-vYa"/>
                             <constraint firstItem="A7w-WT-8Va" firstAttribute="trailing" secondItem="dzd-XO-vpV" secondAttribute="trailing" constant="15" id="E07-HK-gDk"/>
-                            <constraint firstItem="vIT-Ga-zqz" firstAttribute="top" secondItem="dzd-XO-vpV" secondAttribute="bottom" id="Haw-vz-nch"/>
+                            <constraint firstItem="vIT-Ga-zqz" firstAttribute="top" secondItem="dzd-XO-vpV" secondAttribute="bottom" constant="10" id="Haw-vz-nch"/>
                             <constraint firstItem="vIT-Ga-zqz" firstAttribute="trailing" secondItem="A7w-WT-8Va" secondAttribute="trailing" id="Jhl-uK-ZRL"/>
                             <constraint firstItem="fO2-cY-vfg" firstAttribute="leading" secondItem="Ji4-nL-cJ2" secondAttribute="leading" id="Moy-gr-atu"/>
                             <constraint firstItem="dzd-XO-vpV" firstAttribute="top" secondItem="fO2-cY-vfg" secondAttribute="bottom" constant="15" id="Nr2-OW-FFq"/>
@@ -133,6 +134,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="A7w-WT-8Va"/>
                     </view>
+                    <connections>
+                        <outlet property="SearchButton" destination="dzd-XO-vpV" id="OZY-zk-hZh"/>
+                        <outlet property="searchButton" destination="dzd-XO-vpV" id="xPb-P6-NXT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fKn-oC-909" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
