@@ -22,6 +22,7 @@
 		7C86802D24FCA074009E5DF6 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C86802C24FCA074009E5DF6 /* HomeViewController.swift */; };
 		7C86802F24FCA4DB009E5DF6 /* LocationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C86802E24FCA4DB009E5DF6 /* LocationCell.swift */; };
 		7C86803124FCBB64009E5DF6 /* VehicleAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C86803024FCBB64009E5DF6 /* VehicleAnnotation.swift */; };
+		7C86803324FD82A1009E5DF6 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C86803224FD82A1009E5DF6 /* LocationViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		7C86802C24FCA074009E5DF6 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		7C86802E24FCA4DB009E5DF6 /* LocationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCell.swift; sourceTree = "<group>"; };
 		7C86803024FCBB64009E5DF6 /* VehicleAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleAnnotation.swift; sourceTree = "<group>"; };
+		7C86803224FD82A1009E5DF6 /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,13 +104,13 @@
 		7C867FE924FC7A9B009E5DF6 /* Lyft */ = {
 			isa = PBXGroup;
 			children = (
-				7C86801C24FC7AD6009E5DF6 /* Controller */,
 				7C86801A24FC7ABE009E5DF6 /* Model */,
 				7C86801B24FC7ACA009E5DF6 /* View */,
+				7C86801C24FC7AD6009E5DF6 /* Controller */,
 				7C867FEA24FC7A9B009E5DF6 /* AppDelegate.swift */,
-				7C86802624FC813C009E5DF6 /* locations.json */,
 				7C867FEC24FC7A9B009E5DF6 /* SceneDelegate.swift */,
 				7C867FF324FC7A9D009E5DF6 /* Assets.xcassets */,
+				7C86802624FC813C009E5DF6 /* locations.json */,
 				7C867FF824FC7A9D009E5DF6 /* Info.plist */,
 			);
 			path = Lyft;
@@ -157,6 +159,7 @@
 			isa = PBXGroup;
 			children = (
 				7C86802C24FCA074009E5DF6 /* HomeViewController.swift */,
+				7C86803224FD82A1009E5DF6 /* LocationViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -307,6 +310,7 @@
 				7C86801E24FC7B79009E5DF6 /* Location.swift in Sources */,
 				7C86802124FC7CB9009E5DF6 /* LocationService.swift in Sources */,
 				7C86802924FC823A009E5DF6 /* RideQuote.swift in Sources */,
+				7C86803324FD82A1009E5DF6 /* LocationViewController.swift in Sources */,
 				7C86802D24FCA074009E5DF6 /* HomeViewController.swift in Sources */,
 				7C86803124FCBB64009E5DF6 /* VehicleAnnotation.swift in Sources */,
 				7C86802F24FCA4DB009E5DF6 /* LocationCell.swift in Sources */,
