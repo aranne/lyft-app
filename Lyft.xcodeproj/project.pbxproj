@@ -21,6 +21,7 @@
 		7C86802B24FC82D9009E5DF6 /* RideQuoteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C86802A24FC82D9009E5DF6 /* RideQuoteService.swift */; };
 		7C86802D24FCA074009E5DF6 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C86802C24FCA074009E5DF6 /* HomeViewController.swift */; };
 		7C86802F24FCA4DB009E5DF6 /* LocationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C86802E24FCA4DB009E5DF6 /* LocationCell.swift */; };
+		7C86803124FCBB64009E5DF6 /* VehicleAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C86803024FCBB64009E5DF6 /* VehicleAnnotation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		7C86802A24FC82D9009E5DF6 /* RideQuoteService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideQuoteService.swift; sourceTree = "<group>"; };
 		7C86802C24FCA074009E5DF6 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		7C86802E24FCA4DB009E5DF6 /* LocationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCell.swift; sourceTree = "<group>"; };
+		7C86803024FCBB64009E5DF6 /* VehicleAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleAnnotation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +138,7 @@
 				7C86801F24FC7CA7009E5DF6 /* Service */,
 				7C86801D24FC7B79009E5DF6 /* Location.swift */,
 				7C86802824FC823A009E5DF6 /* RideQuote.swift */,
+				7C86803024FCBB64009E5DF6 /* VehicleAnnotation.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -305,6 +308,7 @@
 				7C86802124FC7CB9009E5DF6 /* LocationService.swift in Sources */,
 				7C86802924FC823A009E5DF6 /* RideQuote.swift in Sources */,
 				7C86802D24FCA074009E5DF6 /* HomeViewController.swift in Sources */,
+				7C86803124FCBB64009E5DF6 /* VehicleAnnotation.swift in Sources */,
 				7C86802F24FCA4DB009E5DF6 /* LocationCell.swift in Sources */,
 				7C867FED24FC7A9B009E5DF6 /* SceneDelegate.swift in Sources */,
 			);

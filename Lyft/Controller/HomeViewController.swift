@@ -66,9 +66,23 @@ class HomeViewController: UIViewController, UITableViewDataSource, CLLocationMan
     }
     
     func mapView(_ mapView: MKMapView, didUpdate userLocation: MKUserLocation) {
-        // zoom into user location
+        // Zoom into user location
         let distance = 200.0
         let region = MKCoordinateRegion(center: userLocation.coordinate, latitudinalMeters: distance, longitudinalMeters: distance)
         mapView.setRegion(region, animated: true)
+        
+        // Create three vehicle annotations
+        let latitude = userLocation.coordinate.latitude
+        let longitude = userLocation.coordinate.longitude
+        let offset = 0.00075
+        let coord1 = CLLocationCoordinate2D(latitude: latitude - offset, longitude: longitude - offset)
+        let coord2 = CLLocationCoordinate2D(latitude: latitude, longitude: longitude + offset)
+        let coord3 = CLLocationCoordinate2D(latitude: latitude, longitude: longitude - offset)
+        
+        mapView.addAnnotations([
+            VehicleAnnotation(coordinate: coord1),
+            VehicleAnnotation(coordinate: coord2),
+            VehicleAnnotation(coordinate: coord3)
+        ])
     }
 }
