@@ -36,7 +36,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="99s-cF-XtA">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="99s-cF-XtA">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="560"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="560" id="xCt-EA-6EY"/>
@@ -143,7 +143,6 @@
                         <viewLayoutGuide key="safeArea" id="A7w-WT-8Va"/>
                     </view>
                     <connections>
-                        <outlet property="SearchButton" destination="dzd-XO-vpV" id="OZY-zk-hZh"/>
                         <outlet property="searchButton" destination="dzd-XO-vpV" id="xPb-P6-NXT"/>
                     </connections>
                 </viewController>

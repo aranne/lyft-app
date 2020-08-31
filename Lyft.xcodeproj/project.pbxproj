@@ -41,17 +41,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		7C867FE724FC7A9B009E5DF6 /* Lyft.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lyft.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7C867FE724FC7A9B009E5DF6 /* Lyft.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = Lyft.app; path = "/Users/aranne/Documents/Program/Swift/Lyft/build/Debug-iphoneos/Lyft.app"; sourceTree = "<absolute>"; };
 		7C867FEA24FC7A9B009E5DF6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7C867FEC24FC7A9B009E5DF6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		7C867FF124FC7A9B009E5DF6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7C867FF324FC7A9D009E5DF6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7C867FF624FC7A9D009E5DF6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7C867FF824FC7A9D009E5DF6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7C867FFD24FC7A9D009E5DF6 /* LyftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LyftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7C867FFD24FC7A9D009E5DF6 /* LyftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = LyftTests.xctest; path = "/Users/aranne/Documents/Program/Swift/Lyft/build/Debug-iphoneos/LyftTests.xctest"; sourceTree = "<absolute>"; };
 		7C86800124FC7A9D009E5DF6 /* LyftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LyftTests.swift; sourceTree = "<group>"; };
 		7C86800324FC7A9D009E5DF6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7C86800824FC7A9D009E5DF6 /* LyftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LyftUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7C86800824FC7A9D009E5DF6 /* LyftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = LyftUITests.xctest; path = "/Users/aranne/Documents/Program/Swift/Lyft/build/Debug-iphoneos/LyftUITests.xctest"; sourceTree = "<absolute>"; };
 		7C86800C24FC7A9D009E5DF6 /* LyftUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LyftUITests.swift; sourceTree = "<group>"; };
 		7C86800E24FC7A9D009E5DF6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7C86801D24FC7B79009E5DF6 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
@@ -94,18 +94,7 @@
 				7C867FE924FC7A9B009E5DF6 /* Lyft */,
 				7C86800024FC7A9D009E5DF6 /* LyftTests */,
 				7C86800B24FC7A9D009E5DF6 /* LyftUITests */,
-				7C867FE824FC7A9B009E5DF6 /* Products */,
 			);
-			sourceTree = "<group>";
-		};
-		7C867FE824FC7A9B009E5DF6 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				7C867FE724FC7A9B009E5DF6 /* Lyft.app */,
-				7C867FFD24FC7A9D009E5DF6 /* LyftTests.xctest */,
-				7C86800824FC7A9D009E5DF6 /* LyftUITests.xctest */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		7C867FE924FC7A9B009E5DF6 /* Lyft */ = {
@@ -266,7 +255,7 @@
 				Base,
 			);
 			mainGroup = 7C867FDE24FC7A9B009E5DF6;
-			productRefGroup = 7C867FE824FC7A9B009E5DF6 /* Products */;
+			productRefGroup = 7C867FDE24FC7A9B009E5DF6;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (

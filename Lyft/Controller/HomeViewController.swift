@@ -7,18 +7,29 @@
 //
 
 import UIKit
+import CoreLocation
 
-class HomeViewController: UIViewController, UITableViewDataSource {
+class HomeViewController: UIViewController, UITableViewDataSource, CLLocationManagerDelegate {
     
     @IBOutlet weak var searchButton: UIButton!
     
     var locations = [Location]()
+    var locationManager: CLLocationManager!
+    var currentUserLocation: Location!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let recentLocations = LocationService.shared.getRecentLocations()
+        // Location Manager
+        locationManager = CLLocationManager()
+        locationManager.delegate = self
+        locationManager.requestWhenInUseAuthorization()     // async request
         
+        if CLLocationManager.authorizationStatus() == .authorizedWhenInUse {
+            locationManager.startUpdatingLocation()
+        }
+        
+        let recentLocations = LocationService.shared.getRecentLocations()
         locations = [recentLocations[0], recentLocations[1]]
         
         // Add shadow to searchButton
@@ -27,6 +38,18 @@ class HomeViewController: UIViewController, UITableViewDataSource {
         searchButton.layer.shadowColor = UIColor.black.cgColor
         searchButton.layer.shadowOffset = CGSize(width: 0.5, height: 0.5)
         searchButton.layer.shadowOpacity = 0.5
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        let firstLocation = locations.first!
+        currentUserLocation = Location(title: "Current Location", subtitle: "", latitude: firstLocation.coordinate.latitude, longitude: firstLocation.coordinate.longitude)
+        locationManager.stopUpdatingLocation()
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        if status == .authorizedWhenInUse {
+            locationManager.startUpdatingLocation()
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
