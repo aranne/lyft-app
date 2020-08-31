@@ -44,10 +44,10 @@ class HomeViewController: UIViewController, UITableViewDataSource, CLLocationMan
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let firstLocation = locations.first!
         currentUserLocation = Location(title: "Current Location", subtitle: "", latitude: firstLocation.coordinate.latitude, longitude: firstLocation.coordinate.longitude)
-        print(currentUserLocation.latitude, currentUserLocation.longitude)
-        locationManager.stopUpdatingLocation()
+        locationManager.stopUpdatingLocation() // stop update user location
     }
     
+    // For async authorization update
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         if status == .authorizedWhenInUse {
             locationManager.startUpdatingLocation()
@@ -84,5 +84,24 @@ class HomeViewController: UIViewController, UITableViewDataSource, CLLocationMan
             VehicleAnnotation(coordinate: coord2),
             VehicleAnnotation(coordinate: coord3)
         ])
+    }
+    
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        // Don't change view for default user location annotation
+        if annotation is MKUserLocation {
+            return nil
+        }
+        // Create custom annotation for vehicle
+        let reuseIdentifier = "VehicleAnnotation"
+        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: reuseIdentifier)
+        if annotationView == nil {
+            annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: reuseIdentifier)
+        } else {
+            annotationView?.annotation = annotation
+        }
+        annotationView?.image = UIImage(named: "car")
+        annotationView?.transform = CGAffineTransform(rotationAngle: CGFloat(arc4random_uniform(360)) / 180.0 * CGFloat.pi )
+        
+        return annotationView
     }
 }
