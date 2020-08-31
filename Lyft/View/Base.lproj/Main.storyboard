@@ -41,6 +41,9 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="560" id="xCt-EA-6EY"/>
                                 </constraints>
+                                <connections>
+                                    <outlet property="delegate" destination="7hL-QT-Wbn" id="ljF-ed-vke"/>
+                                </connections>
                             </mapView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rise and shine" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ji4-nL-cJ2">
                                 <rect key="frame" x="20" y="580" width="100" height="18"/>

@@ -8,8 +8,9 @@
 
 import UIKit
 import CoreLocation
+import MapKit
 
-class HomeViewController: UIViewController, UITableViewDataSource, CLLocationManagerDelegate {
+class HomeViewController: UIViewController, UITableViewDataSource, CLLocationManagerDelegate, MKMapViewDelegate {
     
     @IBOutlet weak var searchButton: UIButton!
     
@@ -43,6 +44,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, CLLocationMan
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let firstLocation = locations.first!
         currentUserLocation = Location(title: "Current Location", subtitle: "", latitude: firstLocation.coordinate.latitude, longitude: firstLocation.coordinate.longitude)
+        print(currentUserLocation.latitude, currentUserLocation.longitude)
         locationManager.stopUpdatingLocation()
     }
     
@@ -61,5 +63,12 @@ class HomeViewController: UIViewController, UITableViewDataSource, CLLocationMan
         let location = locations[indexPath.row]
         cell.update(location: location)
         return cell        
+    }
+    
+    func mapView(_ mapView: MKMapView, didUpdate userLocation: MKUserLocation) {
+        // zoom into user location
+        let distance = 200.0
+        let region = MKCoordinateRegion(center: userLocation.coordinate, latitudinalMeters: distance, longitudinalMeters: distance)
+        mapView.setRegion(region, animated: true)
     }
 }
