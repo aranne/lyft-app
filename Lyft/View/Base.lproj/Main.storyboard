@@ -343,7 +343,7 @@
                                     <constraint firstAttribute="height" constant="210" id="gdk-M2-OAS"/>
                                 </constraints>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="70" id="vtj-89-Dde">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="70" id="vtj-89-Dde" customClass="RideQuoteCell" customModule="Lyft" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="374" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="vtj-89-Dde" id="D2h-ik-4fc">
@@ -404,6 +404,13 @@
                                                 <constraint firstItem="zU8-Rl-B9Y" firstAttribute="centerY" secondItem="eBP-1K-AEa" secondAttribute="centerY" id="uu2-Us-8Ls"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="compacityLabel" destination="zU8-Rl-B9Y" id="RiU-hY-xTo"/>
+                                            <outlet property="priceLabel" destination="iSX-OG-a5h" id="hgT-WK-uhj"/>
+                                            <outlet property="thumbnailImageView" destination="q7k-Dy-SLU" id="qaz-qz-hkc"/>
+                                            <outlet property="timeLabel" destination="kkp-29-95T" id="AYW-sk-Lnv"/>
+                                            <outlet property="titleLabel" destination="igg-7z-bdI" id="mvI-vN-yfZ"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>

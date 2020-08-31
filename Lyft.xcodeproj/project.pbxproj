@@ -23,6 +23,7 @@
 		7C86802F24FCA4DB009E5DF6 /* LocationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C86802E24FCA4DB009E5DF6 /* LocationCell.swift */; };
 		7C86803124FCBB64009E5DF6 /* VehicleAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C86803024FCBB64009E5DF6 /* VehicleAnnotation.swift */; };
 		7C86803324FD82A1009E5DF6 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C86803224FD82A1009E5DF6 /* LocationViewController.swift */; };
+		7C86803524FDB0D0009E5DF6 /* RideQuoteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C86803424FDB0D0009E5DF6 /* RideQuoteCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		7C86802E24FCA4DB009E5DF6 /* LocationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCell.swift; sourceTree = "<group>"; };
 		7C86803024FCBB64009E5DF6 /* VehicleAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleAnnotation.swift; sourceTree = "<group>"; };
 		7C86803224FD82A1009E5DF6 /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
+		7C86803424FDB0D0009E5DF6 /* RideQuoteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideQuoteCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +153,7 @@
 				7C867FF024FC7A9B009E5DF6 /* Main.storyboard */,
 				7C867FF524FC7A9D009E5DF6 /* LaunchScreen.storyboard */,
 				7C86802E24FCA4DB009E5DF6 /* LocationCell.swift */,
+				7C86803424FDB0D0009E5DF6 /* RideQuoteCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -305,6 +308,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7C86803524FDB0D0009E5DF6 /* RideQuoteCell.swift in Sources */,
 				7C86802B24FC82D9009E5DF6 /* RideQuoteService.swift in Sources */,
 				7C867FEB24FC7A9B009E5DF6 /* AppDelegate.swift in Sources */,
 				7C86801E24FC7B79009E5DF6 /* Location.swift in Sources */,
