@@ -8,16 +8,16 @@
 
 import Foundation
 
-class Location {
+class Location: Codable {
     var title: String
     var subtitle: String
-    let lat: Double
-    let lng: Double
+    let latitude: Double
+    let longitude: Double
     
-    init(title: String, subtitle: String, lat: Double, lng: Double) {
+    init(title: String, subtitle: String, latitude: Double, longitude: Double) {
         self.title = title
         self.subtitle = subtitle
-        self.lat = lat
-        self.lng = lng
+        self.latitude = latitude
+        self.longitude = longitude
     }
 }
