@@ -31,7 +31,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, CLLocationMan
         }
         
         let recentLocations = LocationService.shared.getRecentLocations()
-        locations = [recentLocations[0], recentLocations[1]]
+        locations = [recentLocations[0], recentLocations[1], recentLocations[2]]
         
         // Add shadow to searchButton
         searchButton.layer.cornerRadius = 10.0
