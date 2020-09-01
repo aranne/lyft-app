@@ -46,7 +46,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		7C867FE724FC7A9B009E5DF6 /* Lyft.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = Lyft.app; path = "/Users/aranne/Documents/Program/Swift/Lyft/build/Debug-iphoneos/Lyft.app"; sourceTree = "<absolute>"; };
 		7C867FEA24FC7A9B009E5DF6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7C867FEC24FC7A9B009E5DF6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		7C867FF124FC7A9B009E5DF6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -71,6 +70,7 @@
 		7C86803424FDB0D0009E5DF6 /* RideQuoteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideQuoteCell.swift; sourceTree = "<group>"; };
 		7C86803624FDB545009E5DF6 /* RouteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteViewController.swift; sourceTree = "<group>"; };
 		7C86803824FE0CD5009E5DF6 /* LocationAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationAnnotation.swift; sourceTree = "<group>"; };
+		7C86803A24FE1E24009E5DF6 /* Lyft.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lyft.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +104,7 @@
 				7C867FE924FC7A9B009E5DF6 /* Lyft */,
 				7C86800024FC7A9D009E5DF6 /* LyftTests */,
 				7C86800B24FC7A9D009E5DF6 /* LyftUITests */,
+				7C86803A24FE1E24009E5DF6 /* Lyft.app */,
 			);
 			sourceTree = "<group>";
 		};
@@ -199,7 +200,7 @@
 			);
 			name = Lyft;
 			productName = Lyft;
-			productReference = 7C867FE724FC7A9B009E5DF6 /* Lyft.app */;
+			productReference = 7C86803A24FE1E24009E5DF6 /* Lyft.app */;
 			productType = "com.apple.product-type.application";
 		};
 		7C867FFC24FC7A9D009E5DF6 /* LyftTests */ = {
@@ -502,6 +503,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5Q2MMSX834;
 				INFOPLIST_FILE = Lyft/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -520,6 +522,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5Q2MMSX834;
 				INFOPLIST_FILE = Lyft/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

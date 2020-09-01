@@ -17,9 +17,6 @@
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="99s-cF-XtA">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="560"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="560" id="Xem-4I-8wO"/>
-                                </constraints>
                                 <connections>
                                     <outlet property="delegate" destination="7hL-QT-Wbn" id="ljF-ed-vke"/>
                                 </connections>
@@ -39,9 +36,6 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dzd-XO-vpV">
                                 <rect key="frame" x="15" y="647" width="384" height="50"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="04k-Vq-Jht"/>
-                                </constraints>
                                 <inset key="contentEdgeInsets" minX="42" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <state key="normal" title="Sarch destination">
                                     <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -302,9 +296,6 @@
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="blD-OQ-SgC">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="490"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="490" id="jEE-VW-2FF"/>
-                                </constraints>
                             </mapView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cni-ta-dvm">
                                 <rect key="frame" x="25" y="64" width="364" height="40"/>
@@ -341,9 +332,6 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="70" estimatedRowHeight="70" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="VXr-4U-KOJ">
                                 <rect key="frame" x="20" y="505" width="374" height="210"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="210" id="0sJ-es-plj"/>
-                                </constraints>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="RideQuoteCell" rowHeight="70" id="vtj-89-Dde" customClass="RideQuoteCell" customModule="Lyft" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="374" height="70"/>
@@ -425,9 +413,6 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mNR-FS-lm4">
                                 <rect key="frame" x="20" y="792" width="374" height="50"/>
                                 <color key="backgroundColor" red="0.61643773319999995" green="0.2714193761" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="tuB-HQ-oeS"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <state key="normal" title="Select Shared">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -446,21 +431,21 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="wUv-Gw-U51" firstAttribute="leading" secondItem="RQv-JP-j6z" secondAttribute="leading" constant="20" id="1rK-Kh-WKC"/>
-                            <constraint firstItem="VXr-4U-KOJ" firstAttribute="height" secondItem="Mwz-GD-TKR" secondAttribute="height" multiplier="0.234375" id="6aX-0R-vZA"/>
-                            <constraint firstItem="mNR-FS-lm4" firstAttribute="height" secondItem="Mwz-GD-TKR" secondAttribute="height" multiplier="0.0558036" id="Djr-Tx-S1Q"/>
+                            <constraint firstItem="VXr-4U-KOJ" firstAttribute="height" secondItem="Mwz-GD-TKR" secondAttribute="height" multiplier="0.234375" id="APV-oX-ITw"/>
                             <constraint firstItem="blD-OQ-SgC" firstAttribute="top" secondItem="Mwz-GD-TKR" secondAttribute="top" id="IVh-c6-5XK"/>
                             <constraint firstItem="VXr-4U-KOJ" firstAttribute="top" secondItem="blD-OQ-SgC" secondAttribute="bottom" constant="15" id="Q6m-05-dYj"/>
                             <constraint firstItem="blD-OQ-SgC" firstAttribute="trailing" secondItem="RQv-JP-j6z" secondAttribute="trailing" id="WMP-af-FoM"/>
-                            <constraint firstItem="blD-OQ-SgC" firstAttribute="height" secondItem="Mwz-GD-TKR" secondAttribute="height" multiplier="0.546875" id="XjU-eb-K7s"/>
                             <constraint firstItem="blD-OQ-SgC" firstAttribute="leading" secondItem="RQv-JP-j6z" secondAttribute="leading" id="anz-pQ-ghp"/>
                             <constraint firstItem="wUv-Gw-U51" firstAttribute="top" secondItem="blD-OQ-SgC" secondAttribute="bottom" constant="-60" id="cIL-xf-8yv"/>
                             <constraint firstItem="VXr-4U-KOJ" firstAttribute="leading" secondItem="RQv-JP-j6z" secondAttribute="leading" constant="20" id="ejQ-XZ-E4t"/>
                             <constraint firstItem="cni-ta-dvm" firstAttribute="leading" secondItem="RQv-JP-j6z" secondAttribute="leading" constant="25" id="em6-QA-soF"/>
+                            <constraint firstItem="blD-OQ-SgC" firstAttribute="height" secondItem="Mwz-GD-TKR" secondAttribute="height" multiplier="0.546875" id="ghV-6S-JU4"/>
                             <constraint firstItem="RQv-JP-j6z" firstAttribute="bottom" secondItem="mNR-FS-lm4" secondAttribute="bottom" constant="20" id="itn-Eg-Waz"/>
                             <constraint firstItem="RQv-JP-j6z" firstAttribute="trailing" secondItem="mNR-FS-lm4" secondAttribute="trailing" constant="20" id="l8D-c8-dgE"/>
                             <constraint firstItem="RQv-JP-j6z" firstAttribute="trailing" secondItem="cni-ta-dvm" secondAttribute="trailing" constant="25" id="nz6-Dg-OKE"/>
                             <constraint firstItem="mNR-FS-lm4" firstAttribute="leading" secondItem="RQv-JP-j6z" secondAttribute="leading" constant="20" id="qWn-ub-L2P"/>
                             <constraint firstItem="RQv-JP-j6z" firstAttribute="trailing" secondItem="VXr-4U-KOJ" secondAttribute="trailing" constant="20" id="vW6-hX-nzp"/>
+                            <constraint firstItem="mNR-FS-lm4" firstAttribute="height" secondItem="Mwz-GD-TKR" secondAttribute="height" multiplier="0.0558036" id="xst-mr-i4j"/>
                             <constraint firstItem="cni-ta-dvm" firstAttribute="top" secondItem="RQv-JP-j6z" secondAttribute="top" constant="20" id="yQ2-Ci-AnV"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="RQv-JP-j6z"/>
