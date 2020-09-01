@@ -26,6 +26,7 @@
 		7C86803524FDB0D0009E5DF6 /* RideQuoteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C86803424FDB0D0009E5DF6 /* RideQuoteCell.swift */; };
 		7C86803724FDB545009E5DF6 /* RouteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C86803624FDB545009E5DF6 /* RouteViewController.swift */; };
 		7C86803924FE0CD6009E5DF6 /* LocationAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C86803824FE0CD5009E5DF6 /* LocationAnnotation.swift */; };
+		7C86803C24FEA3E6009E5DF6 /* Driver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C86803B24FEA3E5009E5DF6 /* Driver.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,7 @@
 		7C86803624FDB545009E5DF6 /* RouteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteViewController.swift; sourceTree = "<group>"; };
 		7C86803824FE0CD5009E5DF6 /* LocationAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationAnnotation.swift; sourceTree = "<group>"; };
 		7C86803A24FE1E24009E5DF6 /* Lyft.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lyft.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7C86803B24FEA3E5009E5DF6 /* Driver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Driver.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +151,7 @@
 				7C86802824FC823A009E5DF6 /* RideQuote.swift */,
 				7C86803024FCBB64009E5DF6 /* VehicleAnnotation.swift */,
 				7C86803824FE0CD5009E5DF6 /* LocationAnnotation.swift */,
+				7C86803B24FEA3E5009E5DF6 /* Driver.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -316,6 +319,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7C86803524FDB0D0009E5DF6 /* RideQuoteCell.swift in Sources */,
+				7C86803C24FEA3E6009E5DF6 /* Driver.swift in Sources */,
 				7C86803924FE0CD6009E5DF6 /* LocationAnnotation.swift in Sources */,
 				7C86802B24FC82D9009E5DF6 /* RideQuoteService.swift in Sources */,
 				7C86803724FDB545009E5DF6 /* RouteViewController.swift in Sources */,
