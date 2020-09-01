@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="s13-zA-A5F">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="AKX-0T-lS0">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -41,7 +41,7 @@
                                     <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="6WR-et-bnK" kind="show" id="FSV-n8-e2w"/>
+                                    <segue destination="6WR-et-bnK" kind="show" identifier="" id="FSV-n8-e2w"/>
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" estimatedRowHeight="60" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vIT-Ga-zqz">
@@ -129,11 +129,12 @@
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="searchButton" destination="dzd-XO-vpV" id="xPb-P6-NXT"/>
+                        <segue destination="s13-zA-A5F" kind="show" identifier="RouteSegue" id="2Ee-kZ-x4V"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fKn-oC-909" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="844.92753623188412" y="22.767857142857142"/>
+            <point key="canvasLocation" x="-296" y="-15"/>
         </scene>
         <!--Drop-off-->
         <scene sceneID="pNR-qG-0xY">
@@ -262,11 +263,12 @@
                     <connections>
                         <outlet property="dropoffTextField" destination="4WT-lc-Ijc" id="hky-lU-Gio"/>
                         <outlet property="tableView" destination="Qwq-1N-Rms" id="IwN-vs-Fss"/>
+                        <segue destination="s13-zA-A5F" kind="show" identifier="RouteSegue" id="VGB-0A-QW1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bUs-ok-IwT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1674" y="23"/>
+            <point key="canvasLocation" x="533" y="-15"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="e5j-JR-xbr">
@@ -284,7 +286,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ggJ-Rc-HDB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-65.217391304347828" y="22.767857142857142"/>
+            <point key="canvasLocation" x="-1096" y="-15"/>
         </scene>
         <!--Route View Controller-->
         <scene sceneID="MxC-xS-Ad8">
@@ -450,6 +452,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="RQv-JP-j6z"/>
                     </view>
+                    <navigationItem key="navigationItem" id="LxP-Yn-e9a"/>
                     <connections>
                         <outlet property="backButton" destination="wUv-Gw-U51" id="djv-WW-Zp2"/>
                         <outlet property="dropoffLabel" destination="0vD-K8-XLL" id="YNl-AV-cef"/>
@@ -461,30 +464,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vxf-l0-XJW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-65.217391304347828" y="672.99107142857144"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="Y7q-Gg-MJV">
-            <objects>
-                <viewController id="UJ1-Yy-QHu" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="FGw-dt-2dh">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="screen-route" translatesAutoresizingMaskIntoConstraints="NO" id="CVm-HT-fFW">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                        </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="RZM-tN-ByC"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="bDj-du-BMG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="601.44927536231887" y="672.99107142857144"/>
+            <point key="canvasLocation" x="1304" y="-15"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="2Ee-kZ-x4V"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="back-arrow" width="25" height="25"/>
         <image name="dot-dropoff" width="20" height="20"/>
@@ -493,7 +478,6 @@
         <image name="person" width="24" height="24"/>
         <image name="ride-shared" width="60" height="60"/>
         <image name="right-arrow" width="25" height="25"/>
-        <image name="screen-route" width="562.5" height="1218"/>
         <image name="search" width="25" height="25"/>
     </resources>
 </document>

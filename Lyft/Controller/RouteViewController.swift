@@ -18,8 +18,8 @@ class RouteViewController: UIViewController, UITableViewDataSource, UITableViewD
     @IBOutlet weak var pickupLabel: UILabel!
     @IBOutlet weak var dropoffLabel: UILabel!
     
-    var pickupLocation: Location?
-    var dropoffLocation: Location?
+    var pickupLocation: Location!
+    var dropoffLocation: Location!
     var rideQuotes = [RideQuote]()
     var selectedIndex = 0
     
@@ -30,10 +30,6 @@ class RouteViewController: UIViewController, UITableViewDataSource, UITableViewD
         routeLabelContainer.layer.cornerRadius = 10.0
         backButton.layer.cornerRadius = backButton.frame.size.width / 2.0
         selectRideButton.layer.cornerRadius = 10.0
-        
-        let locations = LocationService.shared.getRecentLocations()
-        pickupLocation = locations[0]
-        dropoffLocation = locations[1]
         
         // update pickup and dropoff labels
         pickupLabel.text = pickupLocation?.title
