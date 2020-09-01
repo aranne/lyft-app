@@ -15,6 +15,8 @@ class RouteViewController: UIViewController, UITableViewDataSource, UITableViewD
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var selectRideButton: UIButton!
     @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var pickupLabel: UILabel!
+    @IBOutlet weak var dropoffLabel: UILabel!
     
     var pickupLocation: Location?
     var dropoffLocation: Location?
@@ -33,6 +35,11 @@ class RouteViewController: UIViewController, UITableViewDataSource, UITableViewD
         pickupLocation = locations[0]
         dropoffLocation = locations[1]
         
+        // update pickup and dropoff labels
+        pickupLabel.text = pickupLocation?.title
+        dropoffLabel.text = dropoffLocation?.title
+        
+        // get ride quotes
         rideQuotes = RideQuoteService.shared.getQuotes(pickupLocation: pickupLocation!, dropoffLocation: dropoffLocation!)
         
         // Add annotaions to map view
