@@ -467,6 +467,7 @@
                     </view>
                     <connections>
                         <outlet property="backButton" destination="wUv-Gw-U51" id="djv-WW-Zp2"/>
+                        <outlet property="mapView" destination="blD-OQ-SgC" id="IqG-FR-h0k"/>
                         <outlet property="routeLabelContainer" destination="cni-ta-dvm" id="0Cg-2O-hXy"/>
                         <outlet property="selectRideButton" destination="mNR-FS-lm4" id="LD1-hQ-17K"/>
                     </connections>

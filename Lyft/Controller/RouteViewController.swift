@@ -7,12 +7,14 @@
 //
 
 import UIKit
+import MapKit
 
-class RouteViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class RouteViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, MKMapViewDelegate {
     
     @IBOutlet weak var routeLabelContainer: UIView!
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var selectRideButton: UIButton!
+    @IBOutlet weak var mapView: MKMapView!
     
     var pickupLocation: Location?
     var dropoffLocation: Location?
@@ -32,6 +34,15 @@ class RouteViewController: UIViewController, UITableViewDataSource, UITableViewD
         dropoffLocation = locations[1]
         
         rideQuotes = RideQuoteService.shared.getQuotes(pickupLocation: pickupLocation!, dropoffLocation: dropoffLocation!)
+        
+        // Add annotaions to map view
+        let pickupCoordinate = CLLocationCoordinate2D(latitude: pickupLocation!.latitude, longitude: pickupLocation!.longitude)
+        let dropoffCoordinate = CLLocationCoordinate2D(latitude: dropoffLocation!.latitude, longitude: dropoffLocation!.longitude)
+        let pickupAnnotation = LocationAnnotation(coordinate: pickupCoordinate, locationType: "pickup")
+        let dropoffAnnotation = LocationAnnotation(coordinate: dropoffCoordinate, locationType: "dropoff")
+        mapView.addAnnotations([pickupAnnotation, dropoffAnnotation])
+        // Customize annotation
+        mapView.delegate = self
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -51,5 +62,21 @@ class RouteViewController: UIViewController, UITableViewDataSource, UITableViewD
         let selectRideQuote = rideQuotes[selectedIndex]
         selectRideButton.setTitle("Select \(selectRideQuote.name)", for: .normal)
         tableView.reloadData()
+    }
+    
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        if annotation is MKUserLocation {
+            return nil
+        }
+        let reuseIdentifier = "LocationAnnotation"
+        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: reuseIdentifier)
+        if annotationView == nil {
+            annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: reuseIdentifier)
+        } else {
+            annotationView!.annotation = annotation
+        }
+        let locationAnnotation = annotation as! LocationAnnotation
+        annotationView!.image = UIImage(named: "dot-\(locationAnnotation.locationType)")
+        return annotationView
     }
 }

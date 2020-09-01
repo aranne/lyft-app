@@ -109,7 +109,7 @@ class HomeViewController: UIViewController, UITableViewDataSource, CLLocationMan
         if annotationView == nil {
             annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: reuseIdentifier)
         } else {
-            annotationView?.annotation = annotation
+            annotationView!.annotation = annotation
         }
         annotationView?.image = UIImage(named: "car")
         annotationView?.transform = CGAffineTransform(rotationAngle: CGFloat(arc4random_uniform(360)) / 180.0 * CGFloat.pi )
