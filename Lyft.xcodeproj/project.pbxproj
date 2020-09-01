@@ -27,6 +27,7 @@
 		7C86803724FDB545009E5DF6 /* RouteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C86803624FDB545009E5DF6 /* RouteViewController.swift */; };
 		7C86803924FE0CD6009E5DF6 /* LocationAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C86803824FE0CD5009E5DF6 /* LocationAnnotation.swift */; };
 		7C86803C24FEA3E6009E5DF6 /* Driver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C86803B24FEA3E5009E5DF6 /* Driver.swift */; };
+		7C86803E24FEA4B6009E5DF6 /* DriverService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C86803D24FEA4B6009E5DF6 /* DriverService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +74,7 @@
 		7C86803824FE0CD5009E5DF6 /* LocationAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationAnnotation.swift; sourceTree = "<group>"; };
 		7C86803A24FE1E24009E5DF6 /* Lyft.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lyft.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C86803B24FEA3E5009E5DF6 /* Driver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Driver.swift; sourceTree = "<group>"; };
+		7C86803D24FEA4B6009E5DF6 /* DriverService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,6 +184,7 @@
 			children = (
 				7C86802024FC7CB9009E5DF6 /* LocationService.swift */,
 				7C86802A24FC82D9009E5DF6 /* RideQuoteService.swift */,
+				7C86803D24FEA4B6009E5DF6 /* DriverService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -328,6 +331,7 @@
 				7C86802124FC7CB9009E5DF6 /* LocationService.swift in Sources */,
 				7C86802924FC823A009E5DF6 /* RideQuote.swift in Sources */,
 				7C86803324FD82A1009E5DF6 /* LocationViewController.swift in Sources */,
+				7C86803E24FEA4B6009E5DF6 /* DriverService.swift in Sources */,
 				7C86802D24FCA074009E5DF6 /* HomeViewController.swift in Sources */,
 				7C86803124FCBB64009E5DF6 /* VehicleAnnotation.swift in Sources */,
 				7C86802F24FCA4DB009E5DF6 /* LocationCell.swift in Sources */,
