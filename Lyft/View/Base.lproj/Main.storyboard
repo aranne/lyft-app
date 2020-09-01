@@ -453,6 +453,7 @@
                         <viewLayoutGuide key="safeArea" id="RQv-JP-j6z"/>
                     </view>
                     <navigationItem key="navigationItem" id="LxP-Yn-e9a"/>
+                    <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="backButton" destination="wUv-Gw-U51" id="djv-WW-Zp2"/>
                         <outlet property="dropoffLabel" destination="0vD-K8-XLL" id="YNl-AV-cef"/>
@@ -468,7 +469,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="2Ee-kZ-x4V"/>
+        <segue reference="VGB-0A-QW1"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="back-arrow" width="25" height="25"/>

@@ -9,13 +9,13 @@
 import UIKit
 import MapKit
 
-class LocationViewController: UIViewController, UITableViewDataSource, UITextFieldDelegate, MKLocalSearchCompleterDelegate {
+class LocationViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate, MKLocalSearchCompleterDelegate {
     
     @IBOutlet weak var dropoffTextField: UITextField!
     @IBOutlet weak var tableView: UITableView!
     
     var locations = [Location]()
-    var pickupLocation: Location?
+    var pickupLocation: Location!
     var dropoffLocation: Location?
     
     var searchCompleter = MKLocalSearchCompleter()
@@ -68,9 +68,38 @@ class LocationViewController: UIViewController, UITableViewDataSource, UITextFie
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if searchResults.isEmpty {
+            let location = locations[indexPath.row]
+            performSegue(withIdentifier: "RouteSegue", sender: location)
+        } else {
+            let searchResult = searchResults[indexPath.row]
+            // Convert searchResult -> Location obj
+            let searchRequest = MKLocalSearch.Request(completion: searchResult)
+            let search = MKLocalSearch(request: searchRequest)
+            search.start() { (response, error) in
+                if error == nil {
+                    if let dropoffPlacemark = response?.mapItems.first?.placemark {
+                        print("XXXXXXXX \(dropoffPlacemark.coordinate.latitude)")
+                        let location = Location(placemark: dropoffPlacemark)
+                        self.performSegue(withIdentifier: "RouteSegue", sender: location)
+                    }
+                }
+            }
+        }
+    }
+    
     func completerDidUpdateResults(_ completer: MKLocalSearchCompleter) {
         searchResults = completer.results
         // reload table view
         tableView.reloadData()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let routeViewController = segue.destination as? RouteViewController,
+            let dropoffLocation = sender as? Location {
+            routeViewController.pickupLocation = pickupLocation
+            routeViewController.dropoffLocation = dropoffLocation
+        }
     }
 }
