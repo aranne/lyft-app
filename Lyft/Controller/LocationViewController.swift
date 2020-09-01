@@ -52,6 +52,12 @@ class LocationViewController: UIViewController, UITableViewDataSource, UITableVi
         return true
     }
     
+    func completerDidUpdateResults(_ completer: MKLocalSearchCompleter) {
+        searchResults = completer.results
+        // reload table view
+        tableView.reloadData()
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return searchResults.isEmpty ? locations.count : searchResults.count
     }
@@ -80,19 +86,12 @@ class LocationViewController: UIViewController, UITableViewDataSource, UITableVi
             search.start() { (response, error) in
                 if error == nil {
                     if let dropoffPlacemark = response?.mapItems.first?.placemark {
-                        print("XXXXXXXX \(dropoffPlacemark.coordinate.latitude)")
                         let location = Location(placemark: dropoffPlacemark)
                         self.performSegue(withIdentifier: "RouteSegue", sender: location)
                     }
                 }
             }
         }
-    }
-    
-    func completerDidUpdateResults(_ completer: MKLocalSearchCompleter) {
-        searchResults = completer.results
-        // reload table view
-        tableView.reloadData()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

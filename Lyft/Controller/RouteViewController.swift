@@ -51,6 +51,15 @@ class RouteViewController: UIViewController, UITableViewDataSource, UITableViewD
         displayRoute(sourceLocation: pickupLocation!, destinationLocation: dropoffLocation!)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.isNavigationBarHidden = true
+    }
+    
+    @IBAction func backButtonDidTapped(_ sender: UIButton) {
+        navigationController?.popViewController(animated: true)
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return rideQuotes.count
     }

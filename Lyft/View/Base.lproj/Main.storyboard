@@ -427,6 +427,9 @@
                                     <constraint firstAttribute="height" constant="40" id="kKa-TT-ml5"/>
                                 </constraints>
                                 <state key="normal" image="back-arrow"/>
+                                <connections>
+                                    <action selector="backButtonDidTapped:" destination="s13-zA-A5F" eventType="touchUpInside" id="uQD-P9-FQi"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -469,7 +472,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="VGB-0A-QW1"/>
+        <segue reference="2Ee-kZ-x4V"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="back-arrow" width="25" height="25"/>
