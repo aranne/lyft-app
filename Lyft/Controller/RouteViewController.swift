@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RouteViewController: UIViewController, UITableViewDataSource {
+class RouteViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var routeLabelContainer: UIView!
     @IBOutlet weak var backButton: UIButton!
@@ -17,6 +17,7 @@ class RouteViewController: UIViewController, UITableViewDataSource {
     var pickupLocation: Location?
     var dropoffLocation: Location?
     var rideQuotes = [RideQuote]()
+    var selectedIndex = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,6 +42,14 @@ class RouteViewController: UIViewController, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "RideQuoteCell") as! RideQuoteCell
         let rideQuote = rideQuotes[indexPath.row]
         cell.update(rideQuote: rideQuote)
+        cell.updateSelectStatus(status: indexPath.row == selectedIndex)
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedIndex = indexPath.row
+        let selectRideQuote = rideQuotes[selectedIndex]
+        selectRideButton.setTitle("Select \(selectRideQuote.name)", for: .normal)
+        tableView.reloadData()
     }
 }

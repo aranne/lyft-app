@@ -28,4 +28,16 @@ class RideQuoteCell: UITableViewCell {
         dateFormatter.pmSymbol = "PM"
         timeLabel.text = dateFormatter.string(from: rideQuote.time)
     }
+    
+    func updateSelectStatus(status: Bool) {
+        // if true, set the selected cell to purple border
+        // else, set no border
+        if status {
+            contentView.layer.cornerRadius = 5.0
+            contentView.layer.borderWidth = 2.0
+            contentView.layer.borderColor = UIColor(red: 149.0 / 255.0, green: 67.0 / 255.0, blue: 250.0 / 255.0, alpha: 1.0).cgColor
+        } else {
+            contentView.layer.borderWidth = 0.0
+        }
+    }
 }
