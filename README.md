@@ -18,7 +18,7 @@ Elegant rideshare app like Lyft.
 
 ![Route](https://user-images.githubusercontent.com/43511249/92014633-8df99500-ed1d-11ea-9bd3-f7dd732e0c7a.png)
 
-![Driver](https://user-images.githubusercontent.com/43511249/92014671-9b168400-ed1d-11ea-82c2-39e7a02334e8.png)
+![Driver](https://user-images.githubusercontent.com/43511249/92018170-ccde1980-ed22-11ea-9789-cfd7c7e9c944.png)
 
 ## License
 
