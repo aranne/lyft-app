@@ -28,6 +28,7 @@
 		7C86803924FE0CD6009E5DF6 /* LocationAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C86803824FE0CD5009E5DF6 /* LocationAnnotation.swift */; };
 		7C86803C24FEA3E6009E5DF6 /* Driver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C86803B24FEA3E5009E5DF6 /* Driver.swift */; };
 		7C86803E24FEA4B6009E5DF6 /* DriverService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C86803D24FEA4B6009E5DF6 /* DriverService.swift */; };
+		7CB3FCA424FF523800E5B16F /* DriverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CB3FCA324FF523800E5B16F /* DriverViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,10 +55,8 @@
 		7C867FF324FC7A9D009E5DF6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7C867FF624FC7A9D009E5DF6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7C867FF824FC7A9D009E5DF6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7C867FFD24FC7A9D009E5DF6 /* LyftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = LyftTests.xctest; path = "/Users/aranne/Documents/Program/Swift/Lyft/build/Debug-iphoneos/LyftTests.xctest"; sourceTree = "<absolute>"; };
 		7C86800124FC7A9D009E5DF6 /* LyftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LyftTests.swift; sourceTree = "<group>"; };
 		7C86800324FC7A9D009E5DF6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7C86800824FC7A9D009E5DF6 /* LyftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = LyftUITests.xctest; path = "/Users/aranne/Documents/Program/Swift/Lyft/build/Debug-iphoneos/LyftUITests.xctest"; sourceTree = "<absolute>"; };
 		7C86800C24FC7A9D009E5DF6 /* LyftUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LyftUITests.swift; sourceTree = "<group>"; };
 		7C86800E24FC7A9D009E5DF6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7C86801D24FC7B79009E5DF6 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
@@ -75,6 +74,9 @@
 		7C86803A24FE1E24009E5DF6 /* Lyft.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lyft.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C86803B24FEA3E5009E5DF6 /* Driver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Driver.swift; sourceTree = "<group>"; };
 		7C86803D24FEA4B6009E5DF6 /* DriverService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverService.swift; sourceTree = "<group>"; };
+		7CB3FCA124FF49B200E5B16F /* LyftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LyftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7CB3FCA224FF49B200E5B16F /* LyftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LyftUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7CB3FCA324FF523800E5B16F /* DriverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,8 @@
 				7C86800024FC7A9D009E5DF6 /* LyftTests */,
 				7C86800B24FC7A9D009E5DF6 /* LyftUITests */,
 				7C86803A24FE1E24009E5DF6 /* Lyft.app */,
+				7CB3FCA124FF49B200E5B16F /* LyftTests.xctest */,
+				7CB3FCA224FF49B200E5B16F /* LyftUITests.xctest */,
 			);
 			sourceTree = "<group>";
 		};
@@ -175,6 +179,7 @@
 				7C86802C24FCA074009E5DF6 /* HomeViewController.swift */,
 				7C86803224FD82A1009E5DF6 /* LocationViewController.swift */,
 				7C86803624FDB545009E5DF6 /* RouteViewController.swift */,
+				7CB3FCA324FF523800E5B16F /* DriverViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -224,7 +229,7 @@
 			);
 			name = LyftTests;
 			productName = LyftTests;
-			productReference = 7C867FFD24FC7A9D009E5DF6 /* LyftTests.xctest */;
+			productReference = 7CB3FCA124FF49B200E5B16F /* LyftTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		7C86800724FC7A9D009E5DF6 /* LyftUITests */ = {
@@ -242,7 +247,7 @@
 			);
 			name = LyftUITests;
 			productName = LyftUITests;
-			productReference = 7C86800824FC7A9D009E5DF6 /* LyftUITests.xctest */;
+			productReference = 7CB3FCA224FF49B200E5B16F /* LyftUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -321,6 +326,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7CB3FCA424FF523800E5B16F /* DriverViewController.swift in Sources */,
 				7C86803524FDB0D0009E5DF6 /* RideQuoteCell.swift in Sources */,
 				7C86803C24FEA3E6009E5DF6 /* Driver.swift in Sources */,
 				7C86803924FE0CD6009E5DF6 /* LocationAnnotation.swift in Sources */,

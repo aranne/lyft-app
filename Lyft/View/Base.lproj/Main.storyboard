@@ -288,10 +288,10 @@
             </objects>
             <point key="canvasLocation" x="-1096" y="-15"/>
         </scene>
-        <!--View Controller-->
+        <!--Driver View Controller-->
         <scene sceneID="eex-I7-wwB">
             <objects>
-                <viewController id="Npw-fC-4ul" sceneMemberID="viewController">
+                <viewController id="Npw-fC-4ul" customClass="DriverViewController" customModule="Lyft" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ied-2g-BSC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -333,18 +333,18 @@
                                     <constraint firstAttribute="height" constant="100" id="v8w-Wn-Ouv"/>
                                 </constraints>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="driver" translatesAutoresizingMaskIntoConstraints="NO" id="le1-Jk-UhA">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="alicia" translatesAutoresizingMaskIntoConstraints="NO" id="le1-Jk-UhA">
                                 <rect key="frame" x="331" y="650" width="48" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="ZVo-0l-vvo"/>
                                     <constraint firstAttribute="width" constant="48" id="b21-bb-Msi"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="7WB312S" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lyv-V9-byM">
-                                <rect key="frame" x="264" y="690" width="90" height="30"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="7WB312S" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lyv-V9-byM">
+                                <rect key="frame" x="264" y="685" width="90" height="30"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="90" id="0WW-Yd-PDb"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="90" id="YO7-2w-20F"/>
                                     <constraint firstAttribute="height" constant="30" id="axs-v7-KhT"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -419,7 +419,7 @@
                             <constraint firstItem="nTB-cI-Zv7" firstAttribute="top" secondItem="SyG-iu-eXv" secondAttribute="bottom" constant="20" id="8ch-M6-7JD"/>
                             <constraint firstItem="ofF-Dr-dLP" firstAttribute="top" secondItem="SyG-iu-eXv" secondAttribute="bottom" constant="-60" id="8p2-ZX-gR6"/>
                             <constraint firstItem="Yco-qa-dzL" firstAttribute="top" secondItem="OIP-Pr-iRU" secondAttribute="bottom" constant="5" id="AgS-fV-MRE"/>
-                            <constraint firstItem="Lyv-V9-byM" firstAttribute="top" secondItem="OIP-Pr-iRU" secondAttribute="bottom" constant="70" id="BaA-gM-bJd"/>
+                            <constraint firstItem="Lyv-V9-byM" firstAttribute="top" secondItem="OIP-Pr-iRU" secondAttribute="bottom" constant="65" id="BaA-gM-bJd"/>
                             <constraint firstItem="SyG-iu-eXv" firstAttribute="trailing" secondItem="bYZ-k6-qho" secondAttribute="trailing" id="C2Z-fD-9Zw"/>
                             <constraint firstItem="OIP-Pr-iRU" firstAttribute="trailing" secondItem="nTB-cI-Zv7" secondAttribute="trailing" id="DYS-O6-yCc"/>
                             <constraint firstItem="v4L-9T-Zhf" firstAttribute="height" secondItem="wcC-uR-jEo" secondAttribute="height" multiplier="0.48" id="EYG-Kd-9eH"/>
@@ -464,6 +464,18 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="bYZ-k6-qho"/>
                     </view>
+                    <connections>
+                        <outlet property="backButton" destination="ofF-Dr-dLP" id="Vp8-gF-wss"/>
+                        <outlet property="carImageView" destination="Yco-qa-dzL" id="WOf-Sl-rNT"/>
+                        <outlet property="carLabel" destination="ibR-t8-eXR" id="SpK-iN-7hu"/>
+                        <outlet property="driverImageView" destination="le1-Jk-UhA" id="r6D-wK-Gcj"/>
+                        <outlet property="driverNameLabel" destination="psY-1H-dGr" id="CjH-pN-8rF"/>
+                        <outlet property="etaLabel" destination="nTB-cI-Zv7" id="p2e-1v-0Ty"/>
+                        <outlet property="licenseLabel" destination="Lyv-V9-byM" id="QR7-H7-9Fp"/>
+                        <outlet property="mapView" destination="SyG-iu-eXv" id="YlF-r1-mUK"/>
+                        <outlet property="ratingImageView" destination="ly8-gZ-ZzH" id="ZA0-rP-qNm"/>
+                        <outlet property="ratingLabel" destination="nRq-74-KrF" id="QSW-0Y-X6S"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0ps-IM-SSj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -678,11 +690,11 @@
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Hyundai Sonata" width="120" height="120"/>
+        <image name="alicia" width="50" height="50"/>
         <image name="back-arrow" width="25" height="25"/>
         <image name="contact" width="12" height="12"/>
         <image name="dot-dropoff" width="20" height="20"/>
         <image name="dot-pickup" width="20" height="20"/>
-        <image name="driver" width="50" height="50"/>
         <image name="edit" width="12" height="12"/>
         <image name="location" width="25" height="25"/>
         <image name="person" width="24" height="24"/>
