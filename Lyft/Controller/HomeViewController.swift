@@ -13,10 +13,12 @@ import MapKit
 class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, CLLocationManagerDelegate, MKMapViewDelegate {
     
     @IBOutlet weak var searchButton: UIButton!
+    @IBOutlet weak var mapView: MKMapView!
     
     var locations = [Location]()
     var locationManager: CLLocationManager!
     var currentUserLocation: Location!
+    var addCarAnnotations = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,7 +62,29 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let firstLocation = locations.first!
         currentUserLocation = Location(title: "Current Location", subtitle: "", latitude: firstLocation.coordinate.latitude, longitude: firstLocation.coordinate.longitude)
-        locationManager.stopUpdatingLocation() // stop update user location
+        
+        // stop update user location
+        locationManager.stopUpdatingLocation()
+        
+        // Create three vehicle annotations
+        let latitude = currentUserLocation.latitude
+        let longitude = currentUserLocation.longitude
+        let offset = 0.00075
+        let coord1 = CLLocationCoordinate2D(latitude: latitude - offset, longitude: longitude - offset)
+        let coord2 = CLLocationCoordinate2D(latitude: latitude, longitude: longitude + offset)
+        let coord3 = CLLocationCoordinate2D(latitude: latitude, longitude: longitude - offset)
+        if !addCarAnnotations {
+            addCarAnnotations = true
+            mapView.addAnnotations([
+                VehicleAnnotation(coordinate: coord1),
+                VehicleAnnotation(coordinate: coord2),
+                VehicleAnnotation(coordinate: coord3)
+            ])
+        }
+        // Zoom into user location
+        let distance = 200.0
+        let region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: latitude, longitude: longitude), latitudinalMeters: distance, longitudinalMeters: distance)
+        mapView.setRegion(region, animated: true)
     }
     
     // For async authorization update
@@ -85,27 +109,6 @@ class HomeViewController: UIViewController, UITableViewDataSource, UITableViewDe
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let dropoffLocation = locations[indexPath.row]
         performSegue(withIdentifier: "RouteSegue", sender: dropoffLocation)
-    }
-    
-    func mapView(_ mapView: MKMapView, didUpdate userLocation: MKUserLocation) {
-        // Zoom into user location
-        let distance = 200.0
-        let region = MKCoordinateRegion(center: userLocation.coordinate, latitudinalMeters: distance, longitudinalMeters: distance)
-        mapView.setRegion(region, animated: true)
-        
-        // Create three vehicle annotations
-        let latitude = userLocation.coordinate.latitude
-        let longitude = userLocation.coordinate.longitude
-        let offset = 0.00075
-        let coord1 = CLLocationCoordinate2D(latitude: latitude - offset, longitude: longitude - offset)
-        let coord2 = CLLocationCoordinate2D(latitude: latitude, longitude: longitude + offset)
-        let coord3 = CLLocationCoordinate2D(latitude: latitude, longitude: longitude - offset)
-        
-        mapView.addAnnotations([
-            VehicleAnnotation(coordinate: coord1),
-            VehicleAnnotation(coordinate: coord2),
-            VehicleAnnotation(coordinate: coord3)
-        ])
     }
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {

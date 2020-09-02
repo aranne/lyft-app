@@ -128,6 +128,7 @@
                     <navigationItem key="navigationItem" id="5mV-ib-fFy"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
+                        <outlet property="mapView" destination="99s-cF-XtA" id="DNs-hY-MZd"/>
                         <outlet property="searchButton" destination="dzd-XO-vpV" id="xPb-P6-NXT"/>
                         <segue destination="s13-zA-A5F" kind="show" identifier="RouteSegue" id="2Ee-kZ-x4V"/>
                     </connections>
