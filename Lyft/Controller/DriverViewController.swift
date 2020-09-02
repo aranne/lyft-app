@@ -35,10 +35,6 @@ class DriverViewController: UIViewController, MKMapViewDelegate {
         licenseLabel.layer.borderWidth = 1.0
         backButton.layer.cornerRadius = backButton.frame.size.width / 2.0
         
-        let locations = LocationService.shared.getRecentLocations()
-        pickupLocation = locations[0]
-        dropoffLocation = locations[1]
-        
         let (driver, eta) = DriverService.shared.getDriver(pickupLocation: pickupLocation)
         
         etaLabel.text = "ARRIVES IN \(eta) MIN"
@@ -64,10 +60,18 @@ class DriverViewController: UIViewController, MKMapViewDelegate {
         mapView.addAnnotations(annotations)
         
         // Zoom into all annotations
-        mapView.showAnnotations(annotations, animated: true)
+        mapView.showAnnotations(annotations, animated: false)
         
         let driverLocation = Location(title: driver.name, subtitle: driver.licenseNumber, latitude: driver.coordinate.latitude, longitude: driver.coordinate.longitude)
         displayRoute(sourceLocation: driverLocation, destinationLocation: pickupLocation)
+    }
+    
+    @IBAction func backButtonDidTapped(_ sender: UIButton) {
+        navigationController?.popViewController(animated: true)
+    }
+    
+    @IBAction func editRideButtonDidTapped(_ sender: UIButton) {
+        navigationController?.popViewController(animated: true)
     }
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
@@ -92,37 +96,42 @@ class DriverViewController: UIViewController, MKMapViewDelegate {
     }
     
     // cutomize renderer for polyline renderer
-       func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
-           let renderer = MKPolylineRenderer(overlay: overlay)
-           renderer.lineWidth = 5.0
-           renderer.strokeColor = UIColor(red: 247.0 / 255.0, green: 66.0 / 255.0, blue: 190.0 / 255.0, alpha: 1.0)
-           return renderer
-       }
+    func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+       let renderer = MKPolylineRenderer(overlay: overlay)
+       renderer.lineWidth = 5.0
+       renderer.strokeColor = UIColor(red: 247.0 / 255.0, green: 66.0 / 255.0, blue: 190.0 / 255.0, alpha: 1.0)
+       return renderer
+    }
     
     func displayRoute(sourceLocation: Location, destinationLocation: Location) {
-           let sourceCoordinate = CLLocationCoordinate2D(latitude: sourceLocation.latitude, longitude: sourceLocation.longitude)
-           let destinationCoordinate = CLLocationCoordinate2D(latitude: destinationLocation.latitude, longitude: destinationLocation.longitude)
-           let sourcePlaceMark = MKPlacemark(coordinate: sourceCoordinate)
-           let destinationPlaceMark = MKPlacemark(coordinate: destinationCoordinate)
+        let sourceCoordinate = CLLocationCoordinate2D(latitude: sourceLocation.latitude, longitude: sourceLocation.longitude)
+        let destinationCoordinate = CLLocationCoordinate2D(latitude: destinationLocation.latitude, longitude: destinationLocation.longitude)
+        let sourcePlaceMark = MKPlacemark(coordinate: sourceCoordinate)
+        let destinationPlaceMark = MKPlacemark(coordinate: destinationCoordinate)
+
+        let directionRequest = MKDirections.Request()
+        directionRequest.source = MKMapItem(placemark: sourcePlaceMark)
+        directionRequest.destination = MKMapItem(placemark: destinationPlaceMark)
+        directionRequest.transportType = .automobile
+
+        let directions = MKDirections(request: directionRequest)
+        directions.calculate() { (respond, error) in
+        if let error = error {
+           print("There's an error with calculating route \(error)")
+           return
+        }
+        guard let respond = respond else {
+           return
+        }
            
-           let directionRequest = MKDirections.Request()
-           directionRequest.source = MKMapItem(placemark: sourcePlaceMark)
-           directionRequest.destination = MKMapItem(placemark: destinationPlaceMark)
-           directionRequest.transportType = .automobile
-           
-           let directions = MKDirections(request: directionRequest)
-           directions.calculate() { (respond, error) in
-               if let error = error {
-                   print("There's an error with calculating route \(error)")
-                   return
-               }
-               guard let respond = respond else {
-                   return
-               }
-               
-               // add route overlay
-               let route = respond.routes[0]  // get the first route
-               self.mapView.addOverlay(route.polyline, level: .aboveRoads)
-           }
-       }
+        // add route overlay
+        let route = respond.routes[0]  // get the first route
+        self.mapView.addOverlay(route.polyline, level: .aboveRoads)
+            
+        // zoom into the route
+        let EDGE_INSET: CGFloat = 80.0
+        let boundingMapRect = route.polyline.boundingMapRect
+        self.mapView.setVisibleMapRect(boundingMapRect, edgePadding: UIEdgeInsets(top: EDGE_INSET, left: EDGE_INSET, bottom: EDGE_INSET, right: EDGE_INSET), animated: true)
+        }
+    }
 }

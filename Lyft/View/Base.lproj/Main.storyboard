@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Npw-fC-4ul">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="AKX-0T-lS0">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -359,6 +359,9 @@
                                     <constraint firstAttribute="height" constant="40" id="h4J-g5-PI2"/>
                                 </constraints>
                                 <state key="normal" image="back-arrow"/>
+                                <connections>
+                                    <action selector="backButtonDidTapped:" destination="Npw-fC-4ul" eventType="touchUpInside" id="IYJ-J8-XZW"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OIP-Pr-iRU">
                                 <rect key="frame" x="20" y="617" width="374" height="3"/>
@@ -384,6 +387,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5ER-9k-Rgb">
                                 <rect key="frame" x="50" y="766.5" width="71.5" height="19"/>
                                 <state key="normal" image="edit"/>
+                                <connections>
+                                    <action selector="editRideButtonDidTapped:" destination="Npw-fC-4ul" eventType="touchUpInside" id="NQH-Kq-Sup"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v4L-9T-Zhf">
                                 <rect key="frame" x="292.5" y="766.5" width="71.5" height="19"/>
@@ -464,6 +470,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="bYZ-k6-qho"/>
                     </view>
+                    <navigationItem key="navigationItem" id="7EU-1P-0md"/>
                     <connections>
                         <outlet property="backButton" destination="ofF-Dr-dLP" id="Vp8-gF-wss"/>
                         <outlet property="carImageView" destination="Yco-qa-dzL" id="WOf-Sl-rNT"/>
@@ -479,28 +486,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0ps-IM-SSj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1097.1014492753625" y="677.67857142857144"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="rDW-QG-QlC">
-            <objects>
-                <viewController id="PfV-dg-JGg" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="m7w-jM-UIf">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="screen-driver" translatesAutoresizingMaskIntoConstraints="NO" id="ouG-MK-zMx">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                        </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="G7X-g6-UCM"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="02m-Zg-gN4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-420.28985507246381" y="677.67857142857144"/>
+            <point key="canvasLocation" x="2039" y="-15"/>
         </scene>
         <!--Route View Controller-->
         <scene sceneID="MxC-xS-Ad8">
@@ -547,6 +533,9 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="70" estimatedRowHeight="70" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="VXr-4U-KOJ">
                                 <rect key="frame" x="20" y="505" width="374" height="210"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="210" id="Emn-IC-7jb"/>
+                                </constraints>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="RideQuoteCell" rowHeight="70" id="vtj-89-Dde" customClass="RideQuoteCell" customModule="Lyft" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="374" height="70"/>
@@ -632,6 +621,9 @@
                                 <state key="normal" title="Select Shared">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <segue destination="Npw-fC-4ul" kind="show" id="QEc-n3-SwG"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wUv-Gw-U51">
                                 <rect key="frame" x="20" y="430" width="40" height="40"/>
@@ -650,7 +642,6 @@
                         <constraints>
                             <constraint firstItem="wUv-Gw-U51" firstAttribute="leading" secondItem="RQv-JP-j6z" secondAttribute="leading" constant="20" id="1rK-Kh-WKC"/>
                             <constraint firstItem="cni-ta-dvm" firstAttribute="height" secondItem="blD-OQ-SgC" secondAttribute="height" multiplier="0.0816327" id="2EU-Sb-fRr"/>
-                            <constraint firstItem="VXr-4U-KOJ" firstAttribute="height" secondItem="Mwz-GD-TKR" secondAttribute="height" multiplier="0.234375" id="APV-oX-ITw"/>
                             <constraint firstItem="blD-OQ-SgC" firstAttribute="top" secondItem="Mwz-GD-TKR" secondAttribute="top" id="IVh-c6-5XK"/>
                             <constraint firstItem="VXr-4U-KOJ" firstAttribute="top" secondItem="blD-OQ-SgC" secondAttribute="bottom" constant="15" id="Q6m-05-dYj"/>
                             <constraint firstItem="blD-OQ-SgC" firstAttribute="trailing" secondItem="RQv-JP-j6z" secondAttribute="trailing" id="WMP-af-FoM"/>
@@ -702,7 +693,6 @@
         <image name="ride-shared" width="60" height="60"/>
         <image name="right-arrow" width="25" height="25"/>
         <image name="safety" width="12" height="12"/>
-        <image name="screen-driver" width="562.5" height="1218"/>
         <image name="search" width="25" height="25"/>
     </resources>
 </document>

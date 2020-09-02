@@ -56,6 +56,13 @@ class RouteViewController: UIViewController, UITableViewDataSource, UITableViewD
         navigationController?.isNavigationBarHidden = true
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let driverViewController =  segue.destination as? DriverViewController {
+            driverViewController.pickupLocation = pickupLocation
+            driverViewController.dropoffLocation = dropoffLocation
+        }
+    }
+    
     @IBAction func backButtonDidTapped(_ sender: UIButton) {
         navigationController?.popViewController(animated: true)
     }
