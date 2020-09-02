@@ -59,8 +59,15 @@ class DriverViewController: UIViewController, MKMapViewDelegate {
         let dropoffCoordinate = CLLocationCoordinate2D(latitude: dropoffLocation.latitude, longitude: dropoffLocation.longitude)
         let pickupAnnotation = LocationAnnotation(coordinate: pickupCoordinate, locationType: "pickup")
         let dropoffAnnotation = LocationAnnotation(coordinate: dropoffCoordinate, locationType: "dropoff")
-        mapView.addAnnotations([driverAnnotation, pickupAnnotation, dropoffAnnotation])
         
+        let annotations: [MKAnnotation] = [driverAnnotation, pickupAnnotation, dropoffAnnotation]
+        mapView.addAnnotations(annotations)
+        
+        // Zoom into all annotations
+        mapView.showAnnotations(annotations, animated: true)
+        
+        let driverLocation = Location(title: driver.name, subtitle: driver.licenseNumber, latitude: driver.coordinate.latitude, longitude: driver.coordinate.longitude)
+        displayRoute(sourceLocation: driverLocation, destinationLocation: pickupLocation)
     }
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
@@ -83,4 +90,39 @@ class DriverViewController: UIViewController, MKMapViewDelegate {
         }
         return annotationView
     }
+    
+    // cutomize renderer for polyline renderer
+       func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+           let renderer = MKPolylineRenderer(overlay: overlay)
+           renderer.lineWidth = 5.0
+           renderer.strokeColor = UIColor(red: 247.0 / 255.0, green: 66.0 / 255.0, blue: 190.0 / 255.0, alpha: 1.0)
+           return renderer
+       }
+    
+    func displayRoute(sourceLocation: Location, destinationLocation: Location) {
+           let sourceCoordinate = CLLocationCoordinate2D(latitude: sourceLocation.latitude, longitude: sourceLocation.longitude)
+           let destinationCoordinate = CLLocationCoordinate2D(latitude: destinationLocation.latitude, longitude: destinationLocation.longitude)
+           let sourcePlaceMark = MKPlacemark(coordinate: sourceCoordinate)
+           let destinationPlaceMark = MKPlacemark(coordinate: destinationCoordinate)
+           
+           let directionRequest = MKDirections.Request()
+           directionRequest.source = MKMapItem(placemark: sourcePlaceMark)
+           directionRequest.destination = MKMapItem(placemark: destinationPlaceMark)
+           directionRequest.transportType = .automobile
+           
+           let directions = MKDirections(request: directionRequest)
+           directions.calculate() { (respond, error) in
+               if let error = error {
+                   print("There's an error with calculating route \(error)")
+                   return
+               }
+               guard let respond = respond else {
+                   return
+               }
+               
+               // add route overlay
+               let route = respond.routes[0]  // get the first route
+               self.mapView.addOverlay(route.polyline, level: .aboveRoads)
+           }
+       }
 }
