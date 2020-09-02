@@ -9,7 +9,7 @@
 import UIKit
 import MapKit
 
-class DriverViewController: UIViewController {
+class DriverViewController: UIViewController, MKMapViewDelegate {
     
     @IBOutlet weak var etaLabel: UILabel!
     @IBOutlet weak var driverNameLabel: UILabel!
@@ -50,5 +50,37 @@ class DriverViewController: UIViewController {
         let ratingString = String(format: "%.1f", driver.rating)
         ratingImageView.image = UIImage(named: "rating-\(ratingString)")
         ratingLabel.text = ratingString
+        
+        mapView.delegate = self
+        
+        // Add annotations
+        let driverAnnotation = VehicleAnnotation(coordinate: driver.coordinate)
+        let pickupCoordinate = CLLocationCoordinate2D(latitude: pickupLocation.latitude, longitude: pickupLocation.longitude)
+        let dropoffCoordinate = CLLocationCoordinate2D(latitude: dropoffLocation.latitude, longitude: dropoffLocation.longitude)
+        let pickupAnnotation = LocationAnnotation(coordinate: pickupCoordinate, locationType: "pickup")
+        let dropoffAnnotation = LocationAnnotation(coordinate: dropoffCoordinate, locationType: "dropoff")
+        mapView.addAnnotations([driverAnnotation, pickupAnnotation, dropoffAnnotation])
+        
+    }
+    
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        if annotation is MKUserLocation {
+            return nil
+        }
+        
+        let reuseIdentifier = annotation is VehicleAnnotation ? "VehicleAnnotation" : "LocationAnnotation"
+        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: reuseIdentifier)
+        if annotationView == nil {
+            annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: reuseIdentifier)
+        } else {
+            annotationView?.annotation = annotation
+        }
+        
+        if annotation is VehicleAnnotation {
+            annotationView?.image = UIImage(named: "car")
+        } else if let locationAnnotation = annotation as? LocationAnnotation {
+            annotationView?.image = UIImage(named: "dot-\(locationAnnotation.locationType)")
+        }
+        return annotationView
     }
 }
