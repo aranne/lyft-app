@@ -1,4 +1,4 @@
-# lyft app
+# Lyft App
 
 Elegant rideshare app like Lyft.
 
