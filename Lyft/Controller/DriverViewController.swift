@@ -60,7 +60,7 @@ class DriverViewController: UIViewController, MKMapViewDelegate {
         mapView.addAnnotations(annotations)
         
         // Zoom into all annotations
-        mapView.showAnnotations(annotations, animated: false)
+        mapView.showAnnotations(annotations, animated: true)
         
         let driverLocation = Location(title: driver.name, subtitle: driver.licenseNumber, latitude: driver.coordinate.latitude, longitude: driver.coordinate.longitude)
         displayRoute(sourceLocation: driverLocation, destinationLocation: pickupLocation)
